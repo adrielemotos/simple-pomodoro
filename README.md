@@ -2,11 +2,7 @@
 
 Pequeno projeto em HTML/CSS/JavaScript que implementa um temporizador Pomodoro simples.
 
-Veja abaixo uma demonstração rápida do temporizador. Se o vídeo não reproduzir diretamente no GitHub, use o link de download.
-
-<video src="src/assets/Gravando 2026-01-08 110206.mp4" controls width="720" style="max-width:100%; border-radius:8px; box-shadow:0 6px 18px rgba(0,0,0,0.12);">Seu navegador não suporta vídeo embutido.</video>
-
-- Download: [Gravando 2026-01-08 110206.mp4](src/assets/Gravando%202026-01-08%20110206.mp4)
+![Imagem do projeto](src/assets/image.png)
 
 ## Visão Geral
 - Permite escolher durações rápidas (05:00, 15:00, 25:00).
