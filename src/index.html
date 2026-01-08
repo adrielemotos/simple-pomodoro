@@ -6,13 +6,19 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Pomodoro</title>
     <link rel="stylesheet" href="style.css">
+    <link rel="shortcut icon" href="assets/favicon/tomate.png" type="image/x-icon">
 </head>
 
 <body>
-
+    <!-- Relógio no canto superior esquerdo -->
+    <div id="clock" class="clock" role="status" aria-live="polite" aria-atomic="true">--:--:--</div>
 
     <div class="pai">
-    
+
+        <div class="caixaMotivacao">
+            <p class="motivacao">Mantenha o foco — um passo de cada vez! <span class="emoji-oculos" role="img" aria-label="óculos sorridente">😎</span></p>
+        </div>
+
         <div class="caixa0">
             <p id="timer">25:00</p>
         </div>

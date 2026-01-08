@@ -39,6 +39,48 @@ div p {
     padding-bottom: 10px;
 }
 
+/* Caixa separada para frase motivacional acima do cronômetro */
+.caixaMotivacao {
+    width: 60%;
+    text-align: center;
+    border-radius: 18px;
+    padding: 10px 12px;
+    margin-bottom: 12px;
+    background: linear-gradient(90deg, rgba(255,255,255,0.06), rgba(255,255,255,0.03));
+    box-shadow: 3px 6px 10px rgba(0,0,0,0.09);
+}
+
+.motivacao {
+    color: #ffffff;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: clamp(0.95rem, 1.8vw, 1.1rem);
+    margin: 0;
+    opacity: 0.98;
+}
+
+/* Emoji de óculos que se mexe */
+.emoji-oculos {
+    display: inline-block;
+    margin-left: 8px;
+    transform-origin: center bottom;
+    font-size: 1.05em;
+    animation: balancar-oculos 2200ms ease-in-out infinite;
+}
+
+@keyframes balancar-oculos {
+    0% { transform: translateY(0) rotate(0deg); }
+    15% { transform: translateY(-4px) rotate(-6deg); }
+    30% { transform: translateY(0) rotate(0deg); }
+    55% { transform: translateY(-3px) rotate(6deg); }
+    70% { transform: translateY(0) rotate(0deg); }
+    100% { transform: translateY(0) rotate(0deg); }
+}
+
+/* Respeita preferências de movimento reduzido */
+@media (prefers-reduced-motion: reduce) {
+    .emoji-oculos { animation: none; }
+}
+
 .caixa1 {
     text-align: center;
     border-radius: 0px;
@@ -77,14 +119,41 @@ div p {
     padding-left: 100px;
 }
 
-/* Efeito de levantar os botões ao passar o mouse*/
+/* Efeito leve ao passar o mouse sobre os botões */
 .botao, .botao2 {
     cursor: pointer;
-    transition: transform 220ms ease, box-shadow 220ms ease;
+    transition: transform 200ms cubic-bezier(.2,.8,.2,1), box-shadow 200ms cubic-bezier(.2,.8,.2,1);
     will-change: transform, box-shadow;
 }
 
 .botao:hover, .botao:focus, .botao2:hover, .botao2:focus {
-    transform: translateY(-6px);
-    box-shadow: 0 14px 22px rgba(0,0,0,0.18);
+    transform: translateY(-6px) scale(1.02);
+    box-shadow: 0 16px 26px rgba(0,0,0,0.18);
+}
+
+/* leve recuo para feedback tátil */
+.botao:active, .botao2:active {
+    transform: translateY(-2px) scale(0.99);
+    box-shadow: 0 8px 12px rgba(0,0,0,0.12);
+    transition: transform 120ms ease, box-shadow 120ms ease;
+}
+
+/* Estilo do relógio no canto superior esquerdo */
+.clock {
+    position: fixed;
+    top: 12px;
+    left: 12px;
+    background: #ebc6da;
+    color: #ffffff;
+    padding: 6px 10px;
+    border-radius: 8px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 24px;
+    box-shadow: 0 6px 12px rgba(0,0,0,0.12);
+    z-index: 1000;
+    backdrop-filter: blur(4px);
+}
+
+@media (max-width: 420px) {
+    .clock { top: 8px; left: 8px; font-size: 13px; padding: 5px 8px; }
 }
