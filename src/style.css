@@ -76,3 +76,15 @@ div p {
     padding-right: 100px;
     padding-left: 100px;
 }
+
+/* Efeito de levantar os botões ao passar o mouse*/
+.botao, .botao2 {
+    cursor: pointer;
+    transition: transform 220ms ease, box-shadow 220ms ease;
+    will-change: transform, box-shadow;
+}
+
+.botao:hover, .botao:focus, .botao2:hover, .botao2:focus {
+    transform: translateY(-6px);
+    box-shadow: 0 14px 22px rgba(0,0,0,0.18);
+}
